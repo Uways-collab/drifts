@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Oswald', 'Chakra Petch', sans-serif;
+    --font-tech: 'JetBrains Mono', monospace;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #000000;
+    color: #F4F4F5;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF2A00;
+  }
+}
+
+.font-display {
+  font-family: 'Oswald', 'Chakra Petch', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Surveillance CRT scanlines */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.45) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Gritty Film Grain Overlay */
+.noise-overlay {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Dither Grid */
+.dither-grid {
+  background-image: radial-gradient(#18181b 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Precision Crosshair */
+.cursor-crosshair-hud {
+  cursor: crosshair;
+}
+
+@keyframes pulse-fast {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.animate-rec {
+  animation: pulse-fast 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes drift-glow {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 42, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 25px rgba(255, 42, 0, 0.7)); }
+}
+
+.neon-glow-red {
+  animation: drift-glow 3s ease-in-out infinite;
+}
+
+/* High-Energy Laser Scan */
+@keyframes laser-sweep {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(1000%); opacity: 0; }
+}
+
+.animate-laser {
+  animation: laser-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Glitch Shake for Rev Bursts */
+@keyframes rev-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-3px, 2px) rotate(-0.5deg); }
+  20% { transform: translate(3px, -2px) rotate(0.5deg); }
+  30% { transform: translate(-4px, -1px) rotate(-0.8deg); }
+  40% { transform: translate(4px, 2px) rotate(0.6deg); }
+  50% { transform: translate(-2px, 3px) rotate(-0.3deg); }
+  60% { transform: translate(2px, -3px) rotate(0.4deg); }
+  70% { transform: translate(-3px, 1px) rotate(-0.5deg); }
+  80% { transform: translate(3px, -1px) rotate(0.3deg); }
+  90% { transform: translate(-1px, 2px) rotate(-0.2deg); }
+}
+
+.animate-rev-shake {
+  animation: rev-shake 0.15s ease-in-out infinite;
+}
+
+/* Radar Sweep */
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-radar-spin {
+  animation: radar-spin 6s linear infinite;
+}
+
+/* Speed Lines Stream */
+@keyframes speed-line {
+  0% { transform: scaleX(0) translateX(-100%); opacity: 0; }
+  50% { opacity: 0.8; transform: scaleX(1) translateX(0); }
+  100% { transform: scaleX(0) translateX(100%); opacity: 0; }
+}
+
+.animate-speed-stream {
+  animation: speed-line 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}

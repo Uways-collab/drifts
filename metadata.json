@@ -1,0 +1,6 @@
+{
+  "name": "Empathon Autos",
+  "description": "Exclusive luxury and hypercar dealer featuring nocturnal street drift aesthetics, interactive 360-degree frame scrubbing canvas, surveillance HUD telemetry, and VIP acquisition terminal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
